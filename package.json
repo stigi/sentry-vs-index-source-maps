@@ -1,0 +1,19 @@
+{
+  "name": "shadow-maps",
+  "version": "0.0.1",
+  "description": "Demo of ShadowCLJS sourcemaps clashing with sentry-cli",
+  "main": "dist/demo.js",
+  "scripts": {
+    "build": "shadow-cljs release demo",
+    "predemo": "path-exists dist/demo.js || (echo 'Please run `npm run build` first, or run `npm run demo-example` to use a prebuild example.' && exit 1)",
+    "demo": "sentry-cli sourcemaps inject dist",
+    "demo:example": "sentry-cli sourcemaps inject dist-example"
+  },
+  "author": "Ullrich Schäfer <hi+gh@ullrich.is>",
+  "license": "MIT",
+  "devDependencies": {
+    "shadow-cljs": "^2.28.23",
+    "@sentry/cli": "^2.43.0",
+    "path-exists-cli": "^2.0.0"
+  }
+}

@@ -1,0 +1,5 @@
+{:source-paths ["src"]
+ :builds {:demo {:target :browser
+                 :modules {:demo {:entries [demo]}}
+                 :release {:output-dir "dist"
+                           :compiler-options {:source-map true}}}}}
